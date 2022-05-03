@@ -22,8 +22,7 @@ async function createPass() {
     method: 'POST',
     headers: myHeaders,
     body: raw,
-    redirect: 'follow',
-    mode: 'no-cors'
+    redirect: 'follow'
   };
 
   var response = await fetch("https://yi8vccgkxg.execute-api.us-east-2.amazonaws.com/default/YourPass_CreatePass", requestOptions)
