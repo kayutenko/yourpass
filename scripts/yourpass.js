@@ -1,21 +1,16 @@
 
-async function createPass() {
+async function createPass(event) {
   event.preventDefault();
-  var firstName = document.querySelector('input[id="FirstName"]').value
-  var secondName = document.querySelector('input[id="SecondName"]').value
 
-  var myHeaders = new Headers();
+  const data = new FormData(event.target);
+  const values = Object.fromEntries(data.entries());
+
+  console.log(values);
   
-  myHeaders.append("Content-Type", "application/json");
-  // myHeaders.append("Access-Control-Allow-Methods", "DELETE, POST, GET, OPTIONS");
-  // myHeaders.append("Access-Control-Allow-Headers", "Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With");
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");  
 
-  var raw = JSON.stringify({
-    "name": firstName,
-    "surname": secondName
-  });
-
-  console.log(raw)
+  var raw = JSON.stringify(values);
 
   var requestOptions = {
     method: 'POST',
@@ -29,12 +24,13 @@ async function createPass() {
   if (response.ok) {
     let json = await response.json();
     console.log(json);
-    window.location.replace(json.url);
+    window.location = json.url;
   } else {
     console.log(response);
   }
 
-
-
 };
+
+const form = document.querySelector('form');
+form.addEventListener('submit', createPass);
 

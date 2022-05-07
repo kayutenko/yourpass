@@ -14,7 +14,7 @@
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
    <meta property="og:url" content="https://kayutenko.github.io/yourpass/">
    <meta property="og:site_name" content="Assisto Consulting Demo Page">
-   <script src="scripts/yourpass.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
    <!-- <link rel='preload' href='https://eventsingest-demo.cidemo.sas.com/js/ot-all.min.js' as='script' /> -->
    
@@ -70,19 +70,35 @@
                   
                   <h4 class="mb-3" style="text-align: left;">Please, fill in and submit the form to generate your wallet pass</h4>
                   <div class="mb-3">
-                   <label for="FirstName" class="form-label">First Name</label>
-                   <input type="text" class="form-control" id="FirstName">
+                   <label for="FirstName" class="form-label">First name</label>
+                   <input type="text" class="form-control" id="FirstName" name="name">
                   </div>
                   <div class="mb-3">
-                   <label for="SecondName" class="form-label">Second Name</label>
-                   <input type="text" class="form-control" id="SecondName">
+                   <label for="LastName" class="form-label">Last name</label>
+                   <input type="text" class="form-control" id="LastName" name="surname">
                   </div>
-                  <div class="mb-4">
+
+                  <!-- <div class="mb-4">
                    <label for="InputEmail" class="form-label">Email address</label>
                    <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp">
                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                  </div>
-                  <button type="submit" onclick="createPass()" class="btn btn-primary" style="background-color: #54A7D3; border-color: #54A7D3;">Get wallet card</button>
+                  </div> -->
+
+                  <div class="mb-3">
+                     <label for="Theme" class="form-label">Theme of the pass</label>
+                     <select id="Theme" class="form-control" name="theme">
+                       <option selected>Generic</option>
+                       <option>Travel</option>
+                       <option>Insurance</option>
+                       <option>Banking</option>
+                       <option>Fast food restaurant</option>
+                       <option>Alcohol e-shop</option>
+                     </select>
+                     <div id="themeHelp" class="form-text">Please, choose a theme most relevant to your industry </div>
+                  </div>   
+                  
+
+                  <button type="submit" class="btn btn-primary" style="background-color: #54A7D3; border-color: #54A7D3;">Get wallet pass</button>
                </form>  
             </div>
          </div>
@@ -115,9 +131,9 @@
             </div>
             
 
-         </div>
-      </div>   
-      
-   
-   </div>
+            </div>
+         </div>   
+      </div>
+      <script src="scripts/yourpass.js"></script>
+   </body>
 </html>
