@@ -1,0 +1,28 @@
+body {
+
+     background-color: #efefef;
+     background-image: url(https://www.assistoconsulting.com/wp-content/uploads/2022/03/background_07_03_02.png);
+     background-size: 100%;
+     background-repeat-y: no-repeat;
+}
+
+#powered_by_logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#submit_button {
+  background-color: #54A7D3; 
+  border-color: #54A7D3;
+}
+
+#submit_button:active {
+  background-color: #0a58ca; 
+  border-color: #0a53be;
+}
+
+#submit_button:hover {
+  background-color: #007cc2; 
+  border-color: #007cc2;
+}
